@@ -1,0 +1,20 @@
+Student result management manager
+---------Features---------
+used-
+dictionaries, loops , conditionals
+1)Add student
+2) View Student
+3)Check Result
+4) Delete Student
+5)Update Student Marks
+6)Search Student
+7)Exit
+
+-------------------------new feature and architecture change -----------------------------
+1) Multiple Subjects add
+2) percentage calculator
+3) Rank List
+will be used -
+a) nested dictionaries
+b) percentage logic
+c) sorting/ranking

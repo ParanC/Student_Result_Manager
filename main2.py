@@ -39,7 +39,9 @@ while True:
     print("4.Delete Student ")
     print("5.Update Student Marks ")
     print("6.Search Student ")
-    print("7. EXIT ")
+    print("7. Rank  ")
+    print("8. Topper ")
+    print("9. Exit !")
 
     choice =input(" Enter Your Choice : ")
     #If user enters 1 . - to add the student details
@@ -189,10 +191,66 @@ while True:
            print("Marks: ",student[search_name])
        else:
            print(" Student not found! ")
+    # 7. Rank List
+    elif choice == "7":
+
+        if not student:
+            print("No student records found!")
+
+        else:
+
+            ranked_students = sorted(
+                student.items(),
+                key=lambda x: sum(x[1].values()),
+                reverse=True
+            )
+
+            print("\n====== RANK LIST ======")
+
+            rank = 1
+
+            for name, subjects in ranked_students:
+                total = sum(subjects.values())
+                percentage = total / len(subjects)
+
+                print(f"""
+    Rank: {rank}
+    Name: {name}
+    Total: {total}
+    Percentage: {percentage:.2f}%
+    """)
+
+                rank += 1
+    #8. Topper
+    elif choice == "8":
+
+        if not student:
+            print("No student records found!")
+
+        else:
+
+            topper = max(
+                student.items(),
+                key=lambda x: sum(x[1].values())
+            )
+
+            name = topper[0]
+            subjects = topper[1]
+
+            total = sum(subjects.values())
+            percentage = total / len(subjects)
+
+            print("\n===== TOPPER =====")
+
+            print(f"""
+    Name: {name}
+    Total: {total}
+    Percentage: {percentage:.2f}%
+    """)
 
 
     # Exit the application
-    elif choice == "7":
+    elif choice == "9":
         print("Exiting......")
         break
     else:
